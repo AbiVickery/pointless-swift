@@ -60,3 +60,6 @@ collectGem(
 toggleSwitch(
     action: jump;
 )
+jumpDown(
+    steps: 1;
+)
