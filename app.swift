@@ -63,3 +63,9 @@ toggleSwitch(
 jumpDown(
     steps: 1;
 )
+speakOut(
+    dialouge: default;
+)
+jumpUp(
+    steps: 1;
+)
