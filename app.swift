@@ -57,3 +57,6 @@ moveForward(
 collectGem(
     color: red;
 )
+toggleSwitch(
+    action: jump;
+)
