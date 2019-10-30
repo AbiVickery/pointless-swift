@@ -54,3 +54,6 @@ turnRight(
 moveForward(
     steps: 5;
 )
+collectGem(
+    color: red;
+)
