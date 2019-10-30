@@ -69,3 +69,6 @@ speakOut(
 jumpUp(
     steps: 1;
 )
+pickUp(
+    grab: object;
+)
