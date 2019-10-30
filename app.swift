@@ -36,3 +36,17 @@
 // moveForward()
 // moveForward()
 // collectGem()
+
+moveForward(
+    steps: 1;
+)
+turnLeft()
+moveForward(
+    steps: 3;
+)
+turnRight()
+turnLeft()
+turnRight()
+moveForward(
+    steps: 5;
+)
