@@ -45,8 +45,12 @@ moveForward(
     steps: 3;
 )
 turnRight()
-turnLeft()
-turnRight()
+turnLeft(
+    degrees: 0;
+)
+turnRight(
+    degrees: 180;
+)
 moveForward(
     steps: 5;
 )
