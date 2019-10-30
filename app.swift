@@ -72,3 +72,6 @@ jumpUp(
 pickUp(
     grab: object;
 )
+thInk(
+    say: message;
+)
