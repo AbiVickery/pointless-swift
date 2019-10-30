@@ -75,3 +75,6 @@ pickUp(
 thInk(
     say: message;
 )
+register(
+    monster: boogeyman;
+)
