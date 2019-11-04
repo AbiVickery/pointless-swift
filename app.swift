@@ -44,6 +44,11 @@ turnLeft()
 moveForward(
     steps: 3;
 )
+function turnRight(
+    turnLeft()
+    turnLeft()
+    turnLeft()
+)
 turnRight()
 turnLeft(
     degrees: 0;
