@@ -83,3 +83,4 @@ thInk(
 register(
     monster: boogeyman;
 )
+// Ive started to notice that some of the elements of swift are a lot like that of JavaScript...
