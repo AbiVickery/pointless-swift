@@ -86,3 +86,176 @@
 // Ive started to notice that some of the elements of swift are a lot like that of JavaScript...
 
 // Hello, World
+
+// scene.backgroundImage = 
+// playMusic(.lab)
+
+// let yellowCrystal = 
+//     createGraphic(image: , sound: .cowbell)
+//     yellowCrystal.scale = 0.5
+//     scene.place(yellowCrystal, at: Point(x: -20, y: -5))
+
+// let purpleCrystal =
+//     createGraphic(image: , sound: .ahh)
+//     purpleCrystal.scale = 0.5
+//     scene.place(purpleCrystal, at: Point(x: -80, y: -5))
+
+
+//
+
+
+
+scene.backgroundImage = cave
+
+scene.isGridVisible = false
+
+// Decorative moss
+let mossValues = [
+    BandProperties(scale: 0.5, point: Point(x: -20, y: -300)),
+    BandProperties(scale: 0.3, point: Point(x: -70, y: -330)),
+    BandProperties(scale: 0.5, point: Point(x: -400, y: -320))
+]
+for moss in mossValues {
+    let mossGraphic = Graphic(image: moss)
+    mossGraphic.scale = moss.scale
+    scene.place(mossGraphic, at:
+        moss.point)
+}
+
+// Graphic loops
+addGraphicLoops(
+    image: pinkCrystal,
+    sounds: [.beat2, .beat3, .steelDrums2, .comeHere],
+    at: Point(x: 250, y: -112)
+)
+
+addGraphicLoops(
+    image: pearl,
+    sounds: [.cowBell, .cumDeDum],
+    at: Point(x: -445, y: -155)
+)
+
+// Cave glitter
+let glitterPoints = [
+    Point(x: -460, y: 150),
+    Point(x: -410, y: 230),
+    Point(x: -350, y: 260),
+    Point(x: 200, y: 270),
+    Point(x: 350, y: 270),
+    Point(x: 380, y: 200),
+    Point(x: 450, y: 150)
+]
+for point in glitterPoints {
+    addCaveGlitter(
+        count: 25,
+        color: Color(red: 81/255, green: 57/255, blue: 92/255, alpha: 0.4),
+        gradientColor: Color(red: 173/255, green: 84/255, blue: 139/255, alpha: 0.6),
+        at: point
+    )
+}
+
+// Band elements
+let pinkMushroomValues = [
+    BandProperties(scale: 0.3, point: Point(x: -350, y: -260)),
+    BandProperties(scale: 0.15, point: Point(x: -345, y: -320))
+]
+for (index, pinkMushroom) in pinkMushroomValues.enumerated() {
+    addBandElement(
+        image: mushroom1,
+        instrument: .sevenSynth,
+        note: getNote(index),
+        rotation: Double.random(in: -8...8),
+        scale: pinkMushroom.scale,
+        point: pinkMushroom.point
+    )
+}
+
+let purpleMushroomValues = [
+    BandProperties(scale: 0.1, point: Point(x: -300, y: -250)),
+    BandProperties(scale: 0.15, point: Point(x: -320, y: -260)),
+    BandProperties(scale: 0.15, point: Point(x: -280, y: -280)),
+    BandProperties(scale: 0.2, point: Point(x: -320, y: -290)),
+    BandProperties(scale: 0.2, point: Point(x: -400, y: -290)),
+    BandProperties(scale: 0.25, point: Point(x: -380, y: -320)),
+    BandProperties(scale: 0.3, point: Point(x: -300, y: -340)),
+]
+for (index, purpleMushroom) in purpleMushroomValues.enumerated() {
+    addBandElement(
+        image: mushroom2,
+        instrument: .bassSynth,
+        note: getNote(index),
+        rotation: Double.random(in: -10...-10),
+        scale: purpleMushroom.scale,
+        point: purpleMushroom.point
+    )
+}
+
+let purpleCrystalValues = [
+    BandProperties(scale: 0.45, point: Point(x: -200, y: 190), rotation:145.0 ),
+    BandProperties(scale: 0.55, point: Point(x: -100, y: ), rotation: 230.0),
+    BandProperties(scale: 0.55, point: Point(x: -265, y: ), rotation: 150.0),
+    BandProperties(scale: 0.7, point: Point(x: -180, y: ), rotation: 180.0)
+]
+let purpleCrystalNotes = [9.0, 4.0, 5.0, 7.0]
+for (index, purpleCrystal) in purpleCrystalValues.enumerated() {
+    addBandElement(
+        image: crystal2,
+        instrument: .warmBells,
+        note: getNote(index),
+        rotation: purpleCrystal.rotation,
+        scale: purpleCrystal.scale,
+        point: purpleCrystal.point
+    )
+}
+let blueCrystalValues = [
+    BandProperties(scale: 0.45, point: Point(x: 360, y: -250,), rotation: 0.0),
+    BandProperties(scale: 0.25, point: Point(x: 400, y: -270,), rotation: -10.0),
+    BandProperties(scale: 0.2, point: Point(x: 380, y: -280,), rotation: 10.0)
+]
+for (index, blueCrystal) in blueCrystalValues.enumerated() {
+    addBandElement(
+        image: crystal3,
+        instrument: .piano,
+        note: getNote(index),
+        rotation: blueCrystal.rotation,
+        scale: blueCrystal.scale,
+        point: blueCrystal.point
+    )
+}
+
+addBandElement(
+    image: crystal4,
+    instrument: .piano,
+    note: 7,
+    rotation: 0.3,
+    scale: 1.0,
+    point: Point(x: 380, y: -390))
+
+// Band
+addBand(
+    image: mush2,
+    instrument: .electricGuitar,
+    point: Point(x: 80, y: -280), scale: 0.45)
+
+addBand(
+    image: crystal5,
+    instrument: .bassGuitar,
+    point: Point(x: 200, y: -270), 
+    scale: 0.45
+)
+
+// Spinning gems
+let spinningGemValues = [
+    GemProperties(image: dia1, sound: .yoga2, point: Point(x: -470, y: 115)),
+    GemProperties(image: dia2, sound: ., point: Point(x: -, y: )),
+    GemProperties(image: dia3, sound: ., point: Point(x: -, y: )),
+    GemProperties(image: dia1, sound: ., point: Point(x: -, y: )),
+    GemProperties(image: dia2, sound: ., point: Point(x: -, y: )),
+    GemProperties(image: dia3, sound: ., point: Point(x: -, y: )),
+    GemProperties(image: dia1, sound: ., point: Point(x: -, y: )),
+    GemProperties(image: dia2, sound: ., point: Point(x: -, y: )),
+    GemProperties(image: dia3, sound: ., point: Point(x: -, y: )),
+    GemProperties(image: dia1, sound: ., point: Point(x: -, y: )),
+    GemProperties(image: dia2, sound: ., point: Point(x: -, y: )),
+    GemProperties(image: dia3, sound: ., point: Point(x: -, y: ))
+]
