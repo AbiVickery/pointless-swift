@@ -247,15 +247,23 @@ addBand(
 // Spinning gems
 let spinningGemValues = [
     GemProperties(image: dia1, sound: .yoga2, point: Point(x: -470, y: 115)),
-    GemProperties(image: dia2, sound: ., point: Point(x: -, y: )),
-    GemProperties(image: dia3, sound: ., point: Point(x: -, y: )),
-    GemProperties(image: dia1, sound: ., point: Point(x: -, y: )),
-    GemProperties(image: dia2, sound: ., point: Point(x: -, y: )),
-    GemProperties(image: dia3, sound: ., point: Point(x: -, y: )),
-    GemProperties(image: dia1, sound: ., point: Point(x: -, y: )),
-    GemProperties(image: dia2, sound: ., point: Point(x: -, y: )),
-    GemProperties(image: dia3, sound: ., point: Point(x: -, y: )),
-    GemProperties(image: dia1, sound: ., point: Point(x: -, y: )),
-    GemProperties(image: dia2, sound: ., point: Point(x: -, y: )),
-    GemProperties(image: dia3, sound: ., point: Point(x: -, y: ))
+    GemProperties(image: dia2, sound: .vocals, point: Point(x: -460, y: 260)),
+    GemProperties(image: dia3, sound: .ringing, point: Point(x: -430, y: 175)),
+    GemProperties(image: dia1, sound: .flute, point: Point(x: -350, y: 80)),
+    GemProperties(image: dia2, sound: .droplet2, point: Point(x: -350, y: 200)),
+    GemProperties(image: dia3, sound: .etherial2, point: Point(x: 175, y: 275)),
+    GemProperties(image: dia1, sound: .weirdYoga, point: Point(x: 250, y: 255)),
+    GemProperties(image: dia2, sound: .gong, point: Point(x: 260, y: 290)),
+    GemProperties(image: dia3, sound: .thinking, point: Point(x: 385, y: 220)),
+    GemProperties(image: dia1, sound: .twinkles, point: Point(x: 325, y: 255)),
+    GemProperties(image: dia2, sound: .vocals, point: Point(x: 400, y: 270)),
+    GemProperties(image: dia3, sound: .shaker, point: Point(x: 450, y: 140))
 ]
+for gem in spinningGemValues {
+    let spinners = spinningGem(
+        image: gem.image,
+        period: 5,
+        sound: gem.sound
+    )
+    scene.place(spinners, at: gem.point)
+}
